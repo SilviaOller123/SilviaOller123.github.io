@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Dra Sílvia Oller Canet - Psiquiatra d'adults</title>
+    
+    <!-- Adding link to styles.css and js -->
+    <!--<link rel="stylesheet" href="css/styles.css" />-->
+    <link rel="stylesheet" type="text/css" href="/css/styles.css" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+
+    <!-- Map from OpenMap-->
+    <style type="text/css">
+        html, body, #basicMap {
+            width: 100%;
+            height: 450px;
+            margin: 0;
+        }
+    </style>
+
+    <!-- Font Awesome Icons-->
+    <script src="https://kit.fontawesome.com/2c2c9769f0.js" crossorigin="anonymous"></script>
+
+    <!-- OpenLayers map setting script-->
+    <script src="https://cdn.jsdelivr.net/npm/ol@v9.2.4/dist/ol.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v9.2.4/ol.css">
+    <script src="OpenLayers.js"></script>
+
+    <script>
+        function init() {
+            map = new OpenLayers.Map("basicMap");
+            var mapnik         = new OpenLayers.Layer.OSM();
+            var fromProjection = new OpenLayers.Projection("EPSG:4326");   // Transform from WGS 1984
+            var toProjection   = new OpenLayers.Projection("EPSG:900913"); // to Spherical Mercator Projection
+            var position       = new OpenLayers.LonLat(2.15407, 41.3922).transform( fromProjection, toProjection);
+            var zoom           = 15 ; 
+            map.addLayer(mapnik);
+
+            var markers = new OpenLayers.Layer.Markers( "Markers" );
+            map.addLayer(markers);
+
+            var size = new OpenLayers.Size(32,32);
+            var offset = new OpenLayers.Pixel(-(size.w/2), -size.h);
+            var icon = new OpenLayers.Icon('https://cdn4.iconfinder.com/data/icons/small-n-flat/24/map-marker-512.png', scale = 100, offset);
+
+            markers.addMarker(new OpenLayers.Marker(position));
+            //markers.addMarker(new OpenLayers.Marker(new OpenLayers.LonLat(lon, lat),icon));
+            //markers.addMarker(new OpenLayers.Marker(new OpenLayers.LonLat(lon, lat),icon.clone()));
+
+            map.setCenter(position, zoom );
+
+
+        }
+    </script>
+</head>
+
+<!-- Body begins here -->
+<body onload="init();">
+    <header style="height: 110px;" class="d-flex fixed-top flex-wrap justify-content-between py-3 mb-4 border-bottom navbar">
+        <div class="container-fluid" id="landscape">   
+                <a href="index_silvia.html" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+                    <span class="fs-5 ms-auto me-auto navbar-title">Dra. Sílvia Oller Canet - Psiquiatra</span>
+                </a>
+
+                <ul class="nav nav-pills">
+                    <li class="nav-item">
+                        <a href="#inici" class="nav-link navbar-content">Inici</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#curriculum" class="nav-link navbar-content" id="CurriculumLink">Currículum</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#mes_info" class="nav-link navbar-content" id="infoLink">Més sobre trastorns mentals</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#com_treballo" class="nav-link navbar-content">Com treballo?</a>
+                    </li>
+                </ul>
+        </div>
+    </header>
+
+    <main style="margin-top: 110px;">
+        <section id="inici" class="section-2">
+            <div class="container-fluid">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-10 col-lg-8 col-xl-6 text-center">
+                        <img src="img/silvia.jpg" alt="Sílvia Oller Canet" width="453" height="604" id="silviaImage">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Section with the start info -->
+        <section class="section-1">
+
+            <!-- Container with the intro -->
+            <div class="container-fluid" style="width: 80%">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-10 col-lg-8 col-xl-6"></div>
+                        <h2 class="par start-par" style="text-align: justify;">Em dic Sílvia Oller i soc doctora en Psiquiatria. Tinc 25 anys
+                            d'experiència en el tractament de la depressió, l'ansietat, el
+                            trastorn bipolar, els trastorns de personalitat, de la conducta
+                            alimentària i els trastorns psicòtics. Si creus que necessites ajuda
+                            no ho dubtis i contacta amb mi.</h2>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Container with the contact info -->
+            <div class="container-fluid">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-10 col-lg-8 col-xl-6">
+                        <ul class="fa-ul">
+                            <li class="par-fa-li"><span class="fa-li"><i class="fa-solid fa-location-dot par"></i></span> Carrer d'Aribau 143, Principal 1ª, Barcelona.</li>
+                            <li class="par-fa-li"><span class="fa-li"><i class="fa-solid fa-phone"></i></span> 934 103 495 </li>
+                            <li class="par-fa-li"><span class="fa-li"><i class="fa-solid fa-clock"></i></span> Horaris d'atenció: Dilluns-Dijous, de 16h a 20h.</li>
+                            <li class="par-fa-li"><span class="fa-li"><i class="fa-solid fa-envelope"></i></span> ollercanet@gmail.com</li>
+                        </ul>
+                        <p style="font-size: 1.45em;" class="par">Visites presencials i on-line.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Container with the map -->
+            <div class="container-fluid">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-10 col-lg-8 col-xl-6">
+                        <div id="basicMap"></div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        
+        <!-- Section with the curriculum info -->
+        <section id="curriculum" class="section-2">
+            <!-- Container with the title -->
+            <div class="container-fluid tit">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-10 col-lg-8 col-xl-6">
+                        <h1>Currículum</h1>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Container with the body -->
+            <div class="container-fluid">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-10 col-lg-8 col-xl-6"> <!--test-->
+                        <p class="text-cv">
+                            Treballo a la meva Consulta Privada des de fa uns anys i ho
+                            compagino amb la feina de Psiquiatra a l'Hospital del Mar.
+                        </p>
+                        <p class="text-cv">
+                            A l'Hospital del Mar atenc pacients que tenen trastorns mentals
+                            amb malalties físiques i pacients amb depressió resistent.    
+                        </p>
+                        <p class="text-cv">
+                            Anteriorment havia treballat a l'Hospital de Sant Pau on vaig
+                            realitzar el meu treball de Tesi Doctoral que estudiava com escurçar el temps
+                            de resposta dels antidepressius. Intentar mitigar el patiment
+                            dels pacients ha estat sempre un aspecte que m'ha motivat a
+                            investigar, estudiar i millorar en la meva feina.
+                        </p>
+                        <p class="text-cv">
+                            Tinc formació en teràpia familiar sistèmica i en teràpia cognitiva
+                            amb mindfulness i compassió. També, darrerament ens hem
+                            adonat de la importància del trauma en el desenvolupament
+                            dels trastorns mentals i m'he format en aquest tema.
+                        </p>
+                        <p class="text-cv">
+                            A nivell farmacològic estic sempre actualitzada en els tractaments
+                            antidepressius i antipsicòtics. A
+                            l'Hospital del Mar m'ocupo del Programa de Depressió Resistent
+                            i dels tractaments amb ketamina i esketamina.
+                        </p>
+                        <p class="text-cv">
+                            Quant a projectes de recerca, soc la Investigadora
+                            Principal del "Projecte Estrella per la millora de la Salut Mental
+                            dels pacients ingressats a l'Hospital del Mar". I també soc
+                            Investigadora col·laboradora en l'estudi: “Las mujeres luchan
+                            contra la depresión (WFD): una intervención basada en un
+                            programa online con interacción humana" (estudi finançat per
+                            l'Instituto de Salud Carlos III (ISCIII) i co-finançat per la Unió
+                            Europea).
+                        </p>
+                        <p class="text-cv">
+                            A continuació hi ha un resum d'algunes publicacions per si són d'interès.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Container with the publications -->
+            <div class="container-fluid">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-10 col-lg-8 col-xl-6">
+                        <ul>
+                            <li class="text-cv par"><a href="https://openurl.ebsco.com/EPDB%3Agcd%3A4%3A8279876/detailv2?sid=ebsco%3Aplink%3Ascholar&id=ebsco%3Agcd%3A22761117&crl=c" class="white-background-link">Estudio naturalístico: 100 episodios de agitación psicomotriz consecutivos en urgencias psiquiátricas.</a></li>
+                            <li class="text-cv par"><a href="https://openurl.ebsco.com/EPDB%3Agcd%3A7%3A5203975/detailv2?sid=ebsco%3Aplink%3Ascholar&id=ebsco%3Agcd%3A67741259&crl=c" class="white-background-link">Toman los pacientes deprimidos el tratamiento prescrito? Estudio descriptivo sobre el cumplimiento del tratamiento antidepresivo</a></li>
+                            <li class="text-cv par"><a href="https://www.psychiatrist.com/jcp/really-accelerate-enhance-selective-serotonin-reuptake/" class="white-background-link">Can we really accelerate and enhance the SSRI antidepressant effect? A randomised clinical trial and a meta-analysis of pindolol in nonresistant depression</a></li>
+                            <li class="text-cv par"><a href="https://bpspubs.onlinelibrary.wiley.com/doi/full/10.1111/j.1476-5381.2011.01770.x" class="white-background-link">Preclinical and clinical characterization of the selective 5-HT1A receptor antagonist DU-125530 for antidepressant treatment.</a></li>
+                            <li class="text-cv par"><a href="https://www.sciencedirect.com/science/article/abs/pii/S1134593415000688" class="white-background-link">Controversias sobre los niveles plasmáticos de clozapina: revisión a propósito de un caso.</a></li>
+                            <li class="text-cv par"><a href="https://www.cambridge.org/core/journals/european-psychiatry/article/abs/effectiveness-of-a-program-of-physical-activity-and-diet-to-modify-cardiovascular-risk-factors-in-patients-with-severe-mental-illness-after-3month-followup-capicor-randomized-clinical-trial/35EC0E939A4F8F4B17D1C14C4BADD295" class="white-background-link">The effectiveness of a program of physical activity and diet to modify cardiovascular risk factors in patients with severe mental illness after 3-month follow-up: CAPiCOR randomized clinical trial</a></li>
+                            <li class="text-cv par"><a href="https://link.springer.com/article/10.1007/s10597-013-9614-6" class="white-background-link">The effectiveness of lifestyle interventions to reduce cardiovascular risk in patients with severe mental disorders: meta-analysis of intervention studies.</a></li>
+                            <li class="text-cv par"><a href="https://www.sciencedirect.com/science/article/abs/pii/S1134593419300119" class="white-background-link">Síntomas maníacos en encefalitis autoinmune por anticuerpos contra mGluR5: a propósito de un caso.</a></li>
+                        </ul>
+                        <p class="text-cv">La meva tesi doctoral: <a href="https://www.tdx.cat/handle/10803/461153#page=1" class="white-background-link">Receptor 5-HT1A i ISRS: Escurçament de la resposta antidepressiva</a></p>
+                        <p class="text-cv">Aparicions a mitjans de comunicació: <a href="https://www.cope.es/cope-especial/salud-mental-espana-en-terapia/videos/silvia-oller-psicologa-del-hospital-del-mar-linterna-cope-20230216_2183930" class="white-background-link">COPE: La Linterna</a></p>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section with more info about mental illnesses -->
+        <section id="mes_info" class="section-1">
+
+            <!-- Container with the title -->
+            <div class="container-fluid tit">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-10 col-lg-8 col-xl-6">
+                        <h1>Més informació sobre trastorns mentals</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title text-center">Trastorns depressius</h5>
+                                <a href="https://ifightdepression.com/ca/inici" class="card-button" style="display: block; margin-bottom: 10px;">I fight depression</a>
+                                <a href="https://medlineplus.gov/spanish/depression.html" class="card-button" style="display: block;">MedLine Plus</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title text-center">Trastorns d'ansietat</h5>
+                                <a href="https://canalsalut.gencat.cat/ca/detalls/article/ansietat-00001" class="card-button" style="display: block; margin-bottom: 10px;">Canal Salut</a>
+                                <a href="https://medlineplus.gov/spanish/anxiety.html" class="card-button" style="display: block;">MedLine Plus</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title text-center">Trastorn bipolar</h5>
+                                <a href="https://canalsalut.gencat.cat/ca/salut-a-z/t/trastorn-bipolar/index.html" class="card-button" style="display: block; margin-bottom: 10px;">Canal Salut</a>
+                                <a href="https://medlineplus.gov/spanish/bipolardisorder.html" class="card-button" style="display: block;">MedLine Plus</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title text-center">Trastorn d'estrès posttraumàtic</h5>
+                                <a href="https://canalsalut.gencat.cat/ca/salut-a-z/t/trastorn-estres-posttraumatic-tept/index.html" class="card-button" style="display: block; margin-bottom: 10px;">Canal Salut</a>
+                                <a href="https://medlineplus.gov/spanish/depression.html" class="card-button" style="display: block;">Medline Plus</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title text-center">Esquizofrènia</h5>
+                                <a href="https://canalsalut.gencat.cat/ca/detalls/article/Esquizofrenia" class="card-button" style="display: block; margin-bottom: 10px;">Canal Salut</a>
+                                <a href="https://medlineplus.gov/spanish/psychoticdisorders.html" class="card-button" style="display: block;">MedLine Plus</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title text-center">Trastorns de la personalitat</h5>
+                                <a href="https://canalsalut.gencat.cat/ca/detalls/article/trastorn-limit-personalitat-00002" class="card-button" style="display: block; margin-bottom: 10px;">Trastorn Canal Salut</a>
+                                <a href="https://medlineplus.gov/spanish/personalitydisorders.html" class="card-button" style="display: block;">MedLine Plus</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title text-center">Trastorns de la conducta alimentària</h5>
+                                <a href="https://canalsalut.gencat.cat/ca/salut-a-z/t/trastorns-conducta-alimentaria/index.html" class="card-button" style="display: block; margin-bottom: 10px;">Canal Salut</a>
+                                <a href="https://medlineplus.gov/spanish/eatingdisorders.html" class="card-button" style="display: block;">Medline Plus</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title text-center">Trastorn per dèficit d'atenció i hiperactivitat</h5>
+                                <a href="https://canalsalut.gencat.cat/ca/salut-a-z/t/tdah/index.html" class="card-button" style="display: block; margin-bottom: 10px;">Canal Salut</a>
+                                <a href="https://magazine.medlineplus.gov/es/art%C3%ADculo/conocimientos-sobre-el-tdah-lo-que-usted-necesita-saber" class="card-button" style="display: block;">MedLine Plus</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </section>
+
+        <!-- Section with work methodologies-->
+        <section id="com_treballo" class="section-2">
+
+            <!-- Container with the title -->
+            <div class="container-fluid tit">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-10 col-lg-8 col-xl-6">
+                        <h1>Com treballo</h1>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-fluid">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-10 col-lg-8 col-xl-6">
+                        <p class="text-cv par">Tinc formació i experiència tant en teràpies biològiques i
+                            farmacològiques com en teràpia cognitiva - mindfulness i en
+                            teràpia familiar. Així que la meva visió del pacient sol ser àmplia
+                            i intento fer un pla de tractament acurat a les necessitats de la
+                            persona.</p>
+                        <p class="text-cv par">Si cal, indico la realització de tests psicològics que puguin
+                            aportar informació per al diagnòstic de manera més acurada,
+                            per exemple en el cas del TDAH o de possibles trastorns de la
+                            personalitat.</p>
+                        <p class="text-cv par">Col·laboro amb un equip de psicòlogues i psicòlegs experts en
+                            diversos temes, com ara trauma, TDAH, trastorn obsessiu-compulsiu,
+                            depressió, ansietat i addiccions. Tots amb àmplia experiència i
+                            expertesa en el seu camp.</p>
+                        <p class="text-cv par">Acostumo a estar disponible a través del correu electrònic i
+                            responc durant el mateix dia els dubtes i neguits que els
+                            pacients puguin tenir.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <section id="contact" class="section-1 ">
+        <div class="container-fluid tit">
+            <div class="row justify-content-center">
+                <div class="col-7 col-md-5 col-lg-5 col-xl-3 blue-background">
+                    <p style="font-size: 1.15em;" class="par">Informació útil</p>
+                    <ul class="fa-ul">
+                        <li style="font-size: 0.95em;" class="par"><span class="fa-li"><i class="fa-solid fa-location-dot par"></i></span> Carrer d'Aribau 143, Principal 1ª, Barcelona.</li>
+                        <li style="font-size: 0.95em;" class="par"><span class="fa-li"><i class="fa-solid fa-phone"></i></span> 934 103 495 </li>
+                        <li style="font-size: 0.95em;" class="par"><span class="fa-li"><i class="fa-solid fa-clock"></i></span> Horaris d'atenció: Dilluns-Dijous, de 16h a 20h.</li>
+                        <li style="font-size: 0.95em;" class="par"><span class="fa-li"><i class="fa-solid fa-envelope"></i></span> ollercanet@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- JavaScript to set the active link based on the URL and section in view -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var navLinks = document.querySelectorAll('.navbar-content');
+            var sections = document.querySelectorAll('section');
+            var currentPath = window.location.hash;
+
+            function setActiveLink() {
+                navLinks.forEach(function (link) {
+                    link.classList.remove('activate-bro');
+                });
+
+                sections.forEach(function (section) {
+                    var rect = section.getBoundingClientRect();
+                    if (rect.top <= 150 && rect.bottom >= 150) {
+                        var activeLink = document.querySelector('.navbar-content[href="#' + section.id + '"]');
+                        if (activeLink) {
+                            activeLink.classList.add('activate-bro');
+                        }
+                    }
+                });
+            }
+
+            // Set active link based on current URL hash on page load
+            if (currentPath) {
+                var currentLink = document.querySelector('.navbar-content[href="' + currentPath + '"]');
+                if (currentLink) {
+                    currentLink.classList.add('activate-bro');
+                }
+            }
+
+            // Update active link on hash change
+            window.addEventListener('hashchange', function () {
+                var newPath = window.location.hash;
+                navLinks.forEach(function (link) {
+                    link.classList.remove('activate-bro');
+                    if (link.getAttribute('href') === newPath) {
+                        link.classList.add('activate-bro');
+                    }
+                });
+            });
+
+            // Update active link on scroll
+            window.addEventListener('scroll', setActiveLink);
+
+            // Initial check to set active link on page load
+            setActiveLink();
+        });
+    </script>
+
+    <script>
+        document.querySelectorAll('.nav-link').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                const yOffset = -100; // Offset to scroll 100 pixels above
+                const yPosition = targetElement.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+                window.scrollTo({ top: yPosition, behavior: 'smooth' });
+
+                // Update active link class
+                document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('activate-bro'));
+                this.classList.add('activate-bro');
+            });
+        });
+    </script>
+
+
+    <script>
+        // Function to update text based on orientation
+        function updateTextBasedOnOrientation() {
+            const infoLink = document.getElementById('infoLink');
+            const cv = document.getElementById('CurriculumLink');
+            const image = document.getElementById('silviaImage');
+
+            if (window.matchMedia("(orientation: portrait)").matches) {
+                // If portrait mode
+                infoLink.textContent = "Més info";
+                cv.textContent = "CV";
+                image.width = 226.5; // Half of 453
+                image.height = 302;  // Half of 604
+            } else {
+                // If landscape mode
+                infoLink.textContent = "Més sobre trastorns mentals";
+                cv.textContent = "Currículum"
+                image.width = 453;
+                image.height = 604;
+            }
+        }
+
+        // Initial check
+        updateTextBasedOnOrientation();
+
+        // Add event listener for orientation changes
+        window.addEventListener('resize', updateTextBasedOnOrientation);
+    </script>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html> 
+
+
+
+
+
+
