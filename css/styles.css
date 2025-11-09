@@ -10,6 +10,22 @@ header {
     background-color: rgb(110, 133, 183);
 }
 
+
+.lang-btn {
+    font-size: 12px;
+    color: rgb(0, 22, 70);
+    background-color: rgb(248, 249, 240);
+    text-decoration: none;
+}
+
+.lang-btn-active {
+    font-size: 12px;
+    background-color: rgb(110, 133, 183);
+    color: rgb(248, 249, 240);
+    text-decoration: none;
+}
+
+
 .navbar-title {
     font-size: 36px;
     color: rgb(248, 249, 215);
